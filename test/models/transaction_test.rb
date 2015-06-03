@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class TransactionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "get total" do
+    assert_equal 150, Transaction.total
+  end
+
+
+
 end

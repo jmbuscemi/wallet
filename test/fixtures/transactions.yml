@@ -3,9 +3,9 @@
 one:
   recipient: MyString
   description: MyString
-  amount: 9.99
+  amount: 100.00
 
 two:
   recipient: MyString
   description: MyString
-  amount: 9.99
+  amount: 50.00
