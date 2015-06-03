@@ -2,10 +2,10 @@
 
 one:
   recipient: MyString
-  transaction_type: MyString
+  transaction_type: "Deposit"
   amount: 100.00
 
 two:
   recipient: MyString
-  transaction_type: MyString
+  transaction_type: "Deposit"
   amount: 50.00
