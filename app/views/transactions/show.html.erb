@@ -6,14 +6,15 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @transaction.description %>
+  <strong>Transaction Type:</strong>
+  <%= @transaction.transaction_type %>
 </p>
 
 <p>
   <strong>Amount:</strong>
-  <%= @transaction.amount %>
+  <%= number_to_currency(@transaction.amount) %>
 </p>
 
 <%= link_to 'Edit', edit_transaction_path(@transaction) %> |
-<%= link_to 'Back', transactions_path %>
+<%= link_to 'Back', transactions_path %> |
+<%= link_to 'Dashboard', root_path %>

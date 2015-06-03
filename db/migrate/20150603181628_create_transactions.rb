@@ -2,7 +2,7 @@ class CreateTransactions < ActiveRecord::Migration
   def change
     create_table :transactions do |t|
       t.string :recipient
-      t.string :description
+      t.string :transaction_type
       t.decimal :amount
 
       t.timestamps null: false
