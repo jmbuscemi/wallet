@@ -1,6 +1,12 @@
 <h1> Wallet Schmallet </h1>
 
-<div>You have <%= number_to_currency(@total) %> in your </div>
-
-<div><%= link_to "Create New Transaction", new_transaction_path %></div>
-<div><%= link_to "List all Transactions", transactions_path %></div>
+<% if @total < 0 %>
+  <div> You have overdrawn your account by <span class="overdrawn"><%= number_to_currency(@total*(-1)) %></span>.
+    That's kind of bad.  That's really bad.  THE BANK IS GOING TO CALL YOU EVERYDAY UNTIL THEY GET THEIR MONEY!!<br>
+    And also a fee...you will have to pay a fee with money you don't have!  Hooray banking!
+  </div>
+<% else %>
+  <div>You have <span class="positive"><%= number_to_currency(@total) %></span> in your account!</div>
+<% end %>
+<br>
+<div><%= link_to "Create New Transaction", new_transaction_path %> | <%= link_to "List all Transactions", transactions_path %></div>
