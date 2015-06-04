@@ -1,13 +1,9 @@
 class Transaction < ActiveRecord::Base
 
   def self.total
-    self.all.reduce(0) do |sum, t|
-      if t.transaction_type == "Deposit"
-        sum + t.amount
-      else
-        sum - t.amount
-      end
-    end
+    expenses = withdrawals.reduce(0) {|sum, t| sum + t.amount}
+    income = deposits.reduce(0) {|sum, t| sum + t.amount}
+    income - expenses
   end
 
   def self.count
@@ -30,6 +26,14 @@ class Transaction < ActiveRecord::Base
   def self.last_months_expenses
     expenses = withdrawals.select {|t| t.created_at.month == (DateTime.now.month - 1)}
     expenses.reduce(0) {|sum, t| sum + t.amount}
+  end
+
+  def self.count_this_month
+    self.all.select {|t| t.created_at.month == DateTime.now.month}.count
+  end
+
+  def self.count_last_month
+    self.all.select {|t| t.created_at.month == (DateTime.now.month - 1)}.count
   end
 
 end
