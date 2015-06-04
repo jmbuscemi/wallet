@@ -3,17 +3,21 @@ require 'test_helper'
 class TransactionTest < ActiveSupport::TestCase
 
   test "get total" do
-    assert_equal 150, Transaction.total
+    assert_equal 300, Transaction.total
   end
 
   test "transaction count" do
-    assert_equal 2, Transaction.count
+    assert_equal 5, Transaction.count
   end
 
   test "this months expenses" do
-    assert_equal 150, Transaction.this_months_expenses
+    assert_equal 300, Transaction.this_months_expenses
   end
 
-
+  test "last months expenses" do
+    last_month = transactions(:last_month)
+    last_month.update(created_at: last_month.created_at - 1.month)
+    assert_equal 100, Transaction.last_months_expenses
+  end
 
 end

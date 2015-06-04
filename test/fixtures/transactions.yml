@@ -1,11 +1,28 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# DEFAULTS: &DEFAULTS
+#   created_at: <%= 1.month.ago.to_s(:db) %>
 
 one:
-  recipient: MyString
+  recipient: "Bank"
+  transaction_type: "Deposit"
+  amount: 500.00
+
+two:
+  recipient: "Bank"
   transaction_type: "Deposit"
   amount: 100.00
 
-two:
-  recipient: MyString
-  transaction_type: "Deposit"
+three:
+  recipient: "Food"
+  transaction_type: "Withdrawal"
   amount: 50.00
+
+four:
+  recipient: "Bills"
+  transaction_type: "Withdrawal"
+  amount: 150.00
+
+last_month:
+  recipient: "Food"
+  transaction_type: "Withdrawal"
+  amount: 100.00
