@@ -45,4 +45,11 @@ class Transaction < ActiveRecord::Base
     withdrawals.map{|t| t.amount}.sort.last
   end
 
+  def self.money_pit
+    groups = self.where(action: "Withdrawal")
+        .group(:name)
+        .order("sum(amount)")
+    groups.last.name
+  end
+
 end
