@@ -1,3 +1,26 @@
 // Place all the styles related to the Transactions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#overdrawn {
+  font-color: #FFFFFF;
+  font-size: 20px;
+  font-family: arial-black;
+}
+
+#welcome_bad {
+  border: 3px solid #FFFFFF;
+  font-size: 12px;
+  font-family: helvetica;
+}
+
+#welcome_good {
+  font-family: helvetica;
+  font-size: 12px;
+}
+
+#positive {
+  font-color: #00FF11;
+  font-size: 20px;
+  font-family: arial-black;
+}
