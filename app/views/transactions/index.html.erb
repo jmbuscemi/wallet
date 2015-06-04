@@ -3,7 +3,11 @@
 <h1>All Transactions</h1>
 <p> You have made <%= @transactions.count %> transactions </p>
 <p> Money spent this month: <%= number_to_currency(@transactions.this_months_expenses) %> </p>
-<p> Money spent last month: _____ </p>
+<p> Money spent last month: <%= number_to_currency(@transactions.last_months_expenses) %> </p>
+<p> Transactions this month: <%= @transactions.count_this_month %> </p>
+<p> Transactions last month: <%= @transactions.count_last_month %> </p>
+<p> Biggest expense this month: <%= number_to_currency(@transactions.biggest_expense_this_month) %> </p>
+<p> Biggest expense ever: <%= number_to_currency(@transactions.biggest_expense_ever) %> </p>
 
 <table>
   <thead>
