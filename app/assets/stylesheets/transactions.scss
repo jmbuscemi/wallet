@@ -2,25 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#dashboard-statement{
+  background-color: #E2E2E2;
+}
+
 .overdrawn {
-  font-color: #FFFFFF;
+  color: #FF0000;
   font-size: 20px;
-  font-family: arial-black;
 }
 
 .welcome_bad {
-  border: 3px solid #FFFFFF;
-  font-size: 12px;
-  font-family: helvetica;
+  border: 3px solid #FF0000;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .welcome_good {
-  font-family: helvetica;
-  font-size: 12px;
+  font-size: 16px;
+  text-align: center;
 }
 
 .positive {
-  font-color: green;
+  color: #43AC6A;
   font-size: 20px;
-  font-family: arial-black;
+}
+
+.fee-note {
+  font-size: 12px;
+}
+
+#button-group{
+  text-align: center;
+}
+
+.button-group {
+  position: relative;
+  display: inline-block;
+  margin: 1rem 1rem;
+}
+
+.button-group:before {
+  content: attr(data-grouptype);
+  z-index: 99999;
+  color: #999;
+  display: block;
+  font-size: 1rem;
+  padding: 0.25em;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 42.5%;
+  top: .55rem;
+}
+.button-group button + button {
+  margin-left: 5px;
 }

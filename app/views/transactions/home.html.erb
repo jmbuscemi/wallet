@@ -1,12 +1,38 @@
-<h1> Wallet Schmallet </h1>
-
-<% if @total < 0 %>
-  <div class="welcome_bad"> You have overdrawn your account by <span class="overdrawn"><%= number_to_currency(@total*(-1)) %></span>.
-    That's kind of bad.  That's really bad.  THE BANK IS GOING TO CALL YOU EVERYDAY UNTIL THEY GET THEIR MONEY!!<br>
-    And also a fee...you will have to pay a fee with money you don't have!  Hooray banking!
+<div class="large-8 large-centered columns">
+  <h1> Wallet Schmallet </h1>
+</div>
+<div class="large-8 large-centered columns">
+  <% if @total < 0 %>
+    <div class="welcome_bad" id="dashboard-statement">
+      <div>
+        You have overdrawn your account by <span class="overdrawn"><%= number_to_currency(@total*(-1)) %></span>.
+        That's kind of bad.  That's really bad.
+      </div>
+      <div>
+        THE BANK IS GOING TO CALL YOU EVERYDAY UNTIL THEY GET THEIR MONEY!!
+      </div>
+      <div class="fee-note">
+        And also a fee...you will have to pay a fee with money you don't have!  Hooray banking!
+      </div>
+    </div>
+  <% else %>
+    <div class="welcome_good">You have <span class="positive"><%= number_to_currency(@total) %></span> in your account!</div>
+  <% end %>
+  <div class="large-8 large-centered columns" id="button-group">
+    <div class="button-group" data-grouptype="OR">
+      <%= link_to "New Transaction", new_transaction_path, class: "small button success radius" %>
+      <%= link_to "List all Transactions", transactions_path, class: "small button primary radius" %>
+      <!-- <button href="#" class="small button primary radius">Buy it now</button>
+      <button href="#" class="small button success radius">Learn More</button> -->
+    </div>
   </div>
-<% else %>
-  <div class="welcome_good">You have <span class="positive"><%= number_to_currency(@total) %></span> in your account!</div>
-<% end %>
-<br>
-<div><%= link_to "Create New Transaction", new_transaction_path %> | <%= link_to "List all Transactions", transactions_path %></div>
+  <!-- <div class="large-8 large-centered columns">
+    <ul class="button-group even-2" data-grouptype="OR">
+      <li><%= link_to "New Transaction", new_transaction_path, class: "small button success radius", id: "dashboard-button" %></li>
+      <li><%= link_to "List all Transactions", transactions_path, class: "small button primary radius", id: "dashboard-button" %></li>
+    </ul>
+  </div> -->
+
+
+
+</div>
