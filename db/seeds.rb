@@ -11,11 +11,21 @@ expense_places = ["Stag's Head", "Only Burger", "Progress Energy", "Trader Joe's
 
 how_many.times do
   random = (1..100).to_a.sample
-  if random <=50
+  if random < 26
     Transaction.create!(recipient: expense_places.sample,
         transaction_type: "Withdrawal",
         amount: Faker::Commerce.price,
         created_at: Faker::Date.between(1.month.ago, Date.today))
+  elsif random < 51
+    Transaction.create!(recipient: expense_places.sample,
+        transaction_type: "Withdrawal",
+        amount: Faker::Commerce.price,
+        created_at: Faker::Date.between(2.months.ago, Date.today))
+  elsif random < 76
+    Transaction.create!(recipient: "Bank",
+        transaction_type: "Deposit",
+        amount: Faker::Commerce.price,
+        created_at: Faker::Date.between(2.months.ago, Date.today))
   else
     Transaction.create!(recipient: "Bank",
         transaction_type: "Deposit",
