@@ -12,18 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :recipient %><br>
-    <%= f.text_field :recipient %>
+    <%= f.text_field :recipient, placeholder: "Recipient" %>
   </div>
   <div class="field">
-    <%= f.label :transaction_type %><br>
+    <%= f.label :transaction_type %>
     <%= f.select :transaction_type, options_for_select(["Deposit", "Withdrawal"], "Deposit") %>
   </div>
   <div class="field">
-    <%= f.label :amount %><br>
-    <%= f.text_field :amount %>
+    <%= f.number_field :amount, min: 0, placeholder: "Amount" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button small success radius"%>
   </div>
 <% end %>
