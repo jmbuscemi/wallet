@@ -21,28 +21,24 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(transaction_params)
-
-      if @transaction.save
-        redirect_to @transaction, notice: 'Transaction was successfully created.'
-      else
-        render :new
-      end
+    if @transaction.save
+      redirect_to @transaction, notice: 'Transaction was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-      if @transaction.update(transaction_params)
-        redirect_to @transaction, notice: 'Transaction was successfully updated.'
-      else
-        render :edit
-      end
+    if @transaction.update(transaction_params)
+      redirect_to @transaction, notice: 'Transaction was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @transaction.destroy
       redirect_to transactions_url, notice: 'Transaction was successfully destroyed.'
-    end
   end
 
   private
