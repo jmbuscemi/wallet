@@ -46,10 +46,7 @@ class Transaction < ActiveRecord::Base
   end
 
   def self.money_pit
-    groups = self.where(transaction_type: "Withdrawal")
-        .group(:recipient)
-        .order("sum(amount)")
-    groups.last.recipient
+    self.where(transaction_type: "Withdrawal").group(:recipient).order("sum(amount)").last.recipient
   end
 
 end
