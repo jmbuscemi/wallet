@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-  before_action :set_transaction, only: [:show, :edit, :update, :destroy]
+  before_action :set_transaction, only: [:edit, :update, :destroy]
 
   def home
     @total = Transaction.total
@@ -7,9 +7,6 @@ class TransactionsController < ApplicationController
 
   def index
     @transactions = Transaction.all
-  end
-
-  def show
   end
 
   def new
@@ -22,7 +19,7 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(transaction_params)
     if @transaction.save
-      redirect_to @transaction, notice: 'Transaction was successfully created.'
+      redirect_to transactions_path, notice: 'Transaction was successfully created.'
     else
       render :new
     end
@@ -30,7 +27,7 @@ class TransactionsController < ApplicationController
 
   def update
     if @transaction.update(transaction_params)
-      redirect_to @transaction, notice: 'Transaction was successfully updated.'
+      redirect_to transactions_path, notice: 'Transaction was successfully updated.'
     else
       render :edit
     end
