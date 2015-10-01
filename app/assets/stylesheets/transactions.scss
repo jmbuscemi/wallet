@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.large-centered {
+  text-align: center;
+}
+
+table {
+  margin: 20px auto;
+}
+
 #dashboard-statement{
   background-color: #E2E2E2;
 }
@@ -43,31 +51,28 @@
   margin: 1rem 1rem;
 }
 
-.button-group:before {
-  content: attr(data-grouptype);
-  z-index: 99999;
-  color: #999;
-  display: block;
-  font-size: 1rem;
-  padding: 0.25em;
-  border-radius: 50%;
-  background: #fff;
-  position: absolute;
-  left: 42.5%;
-  top: .55rem;
-}
+// .button-group:before {
+//   content: attr(data-grouptype);
+//   z-index: 99999;
+//   color: #999;
+//   display: block;
+//   font-size: 1rem;
+//   padding: 0.25em;
+//   border-radius: 50%;
+//   background: #fff;
+//   position: absolute;
+//   left: 42.5%;
+//   top: .55rem;
+// }
+
 .button-group button + button {
   margin-left: 5px;
 }
 
-.field {
+#transaction-highlights {
   text-align: center;
 }
 
-.actions {
-  text-align: center;
-}
-
-#new-page-links{
+#biggest-expense-ever {
   text-align: center;
 }
