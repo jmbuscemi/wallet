@@ -29,10 +29,16 @@
 </div>
 
 <div class="row" id="biggest-expense-ever">
-  <div class="large-6 large-centered columns">
+  <div class="large-6 columns">
     <div class="panel">
       <h5>Biggest Expense Ever</h5>
       <p><%= number_to_currency(@transactions.biggest_expense_ever) %></p>
+    </div>
+  </div>
+  <div class="large-6 columns">
+    <div class="panel">
+      <h5>Money Pit</h5>
+      <p><%= @transactions.money_pit %></p>
     </div>
   </div>
 </div>
